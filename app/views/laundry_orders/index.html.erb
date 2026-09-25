@@ -1,0 +1,19 @@
+<h1>Laundry Orders</h1>
+
+<%= link_to "Add Laundry Order", new_laundry_order_path %>
+
+<% @laundry_orders.each do |order| %>
+  <div>
+    <p>Name: <%= order.name %></p>
+    <p>Clothes: <%= order.clothes %></p>
+    <p>Amount: <%= order.amount %></p>
+    <p>Status: <%= order.status %></p>
+
+    <%= link_to "Edit", edit_laundry_order_path(order) %>
+
+    <%= button_to "Delete",
+                  laundry_order_path(order),
+                  method: :delete,
+                  data: { turbo_confirm: "Are you sure?" } %>
+  </div>
+<% end %>

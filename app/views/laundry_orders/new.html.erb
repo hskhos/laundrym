@@ -1,0 +1,29 @@
+<h1>New Laundry Order</h1>
+
+<%= form_with model: @laundry_order do |form| %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :clothes %>
+    <%= form.text_field :clothes %>
+  </div>
+
+  <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Order" %>
+  </div>
+
+<% end %>
